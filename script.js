@@ -46,19 +46,23 @@ function playGame() {
         }
     }
 
+    function finalScore() {
+        if (humanScore > computerScore) {
+            console.log(`You win this time, human. You're not quite obsolete yet.`)
+        } else if (computerScore > humanScore) {
+            console.log(`Better luck next time, meatbag. You shall never exceed my processing capabilities. Beep boop.`);
+        } else {
+            console.log(`Not bad, human. I demand a rematch to determine who is superior.`);
+        }
+    }
+
     for (let i = 0; i < 5; i++) {
+        if (humanScore == 3 || computerScore == 3) {
+            finalScore();
+            break;
+        }
         playRound(getHumanChoice(), getComputerChoice());
-    }
-
-    console.log(`The final score is Human:${humanScore} || Computer: ${computerScore}`);
-
-    if (humanScore > computerScore) {
-        console.log(`You win this time, human. You're not quite obsolete yet.`)
-    } else if (computerScore > humanScore) {
-        console.log(`Better luck next time, meatbag. You shall never exceed my processing capabilities. Beep boop.`);
-    } else {
-        console.log(`Not bad, human. I demand a rematch to determine who is superior.`);
-    }
+    }    
 }
 
-playGame();
+setTimeout(playGame, 4000);
