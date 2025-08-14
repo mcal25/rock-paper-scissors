@@ -25,24 +25,31 @@ function playGame() {
     function playRound(humanChoice, computerChoice) {
         if (humanChoice === computerChoice) {
             console.log(`Same choice, it's a draw!`);
+            console.log(`You: ${humanScore} || Me: ${computerScore}`);
         } else if (humanChoice === 'rock' && computerChoice === 'paper') {
             computerScore++;
             console.log('Rock loses to my paper. I win!');
+            console.log(`You: ${humanScore} || Me: ${computerScore}`);
         } else if (humanChoice === 'paper' && computerChoice === 'scissors') {
             computerScore++;
             console.log(`My scissors deconstruct your paper. I win.`);
+            console.log(`You: ${humanScore} || Me: ${computerScore}`);
         } else if (humanChoice === 'scissors' && computerChoice === 'rock') {
             computerScore++;
             console.log('My rock smashes your scissors into tiny smitherines. I am victorious.');
+            console.log(`You: ${humanScore} || Me: ${computerScore}`);
         } else if (computerChoice === 'rock' && humanChoice === 'paper') {
             humanScore++;
             console.log(`Your paper beats my rock.`);
+            console.log(`You: ${humanScore} || Me: ${computerScore}`);
         } else if (computerChoice === 'paper' && humanChoice === 'scissors') {
             humanScore++;
             console.log('Your scissors tear up my paper. You win this round, meatbag!');
+            console.log(`You: ${humanScore} || Me: ${computerScore}`);
         } else if (computerChoice === 'scissors' && humanChoice === 'rock') {
             humanScore++;
             console.log(`Your rock crushes my scissors. I'm suing. You win this time, human.`);
+            console.log(`You: ${humanScore} || Me: ${computerScore}`);
         }
     }
 
