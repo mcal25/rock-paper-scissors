@@ -53,8 +53,8 @@ function playGame() {
         } else {
             console.log(`Not bad, human. I demand a rematch to determine who is superior.`);
         }
-        humanScore == 0;
-        computerScore == 0;
+        humanScore = 0;
+        computerScore = 0;
     }
 
     while (humanScore < 3 && computerScore < 3) {
