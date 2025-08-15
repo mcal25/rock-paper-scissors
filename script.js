@@ -28,28 +28,22 @@ function playGame() {
             console.log(`You: ${humanScore} || Me: ${computerScore}`);
         } else if (humanChoice === 'rock' && computerChoice === 'paper') {
             computerScore++;
-            console.log('Rock loses to my paper. I win!');
-            console.log(`You: ${humanScore} || Me: ${computerScore}`);
+            console.log(`Rock loses to my paper. I win! You: ${humanScore} || Me: ${computerScore}` );
         } else if (humanChoice === 'paper' && computerChoice === 'scissors') {
             computerScore++;
-            console.log(`My scissors deconstruct your paper. I win.`);
-            console.log(`You: ${humanScore} || Me: ${computerScore}`);
+            console.log(`My scissors deconstruct your paper. I win. You: ${humanScore} || Me: ${computerScore}` );
         } else if (humanChoice === 'scissors' && computerChoice === 'rock') {
             computerScore++;
-            console.log('My rock smashes your scissors into tiny smitherines. I am victorious.');
-            console.log(`You: ${humanScore} || Me: ${computerScore}`);
+            console.log(`My rock smashes your scissors into tiny smitherines. I am victorious. You: ${humanScore} || Me: ${computerScore}` );
         } else if (computerChoice === 'rock' && humanChoice === 'paper') {
             humanScore++;
-            console.log(`Your paper beats my rock.`);
-            console.log(`You: ${humanScore} || Me: ${computerScore}`);
+            console.log(`Your paper beats my rock. You: ${humanScore} || Me: ${computerScore}` );
         } else if (computerChoice === 'paper' && humanChoice === 'scissors') {
             humanScore++;
-            console.log('Your scissors tear up my paper. You win this round, meatbag!');
-            console.log(`You: ${humanScore} || Me: ${computerScore}`);
+            console.log(`Your scissors tear up my paper. You win this round, meatbag! You: ${humanScore} || Me: ${computerScore}` );
         } else if (computerChoice === 'scissors' && humanChoice === 'rock') {
             humanScore++;
-            console.log(`Your rock crushes my scissors. I'm suing. You win this time, human.`);
-            console.log(`You: ${humanScore} || Me: ${computerScore}`);
+            console.log(`Your rock crushes my scissors. I'm suing. You win this time, human. You: ${humanScore} || Me: ${computerScore}` );
         }
     }
 
@@ -61,14 +55,16 @@ function playGame() {
         } else {
             console.log(`Not bad, human. I demand a rematch to determine who is superior.`);
         }
+        humanScore == 0;
+        computerScore == 0;
     }
 
-    for (let i = 0; i < 5; i++) {
+    while (humanScore < 3 && computerScore < 3) {
+        playRound(getHumanChoice(), getComputerChoice());        
+
         if (humanScore == 3 || computerScore == 3) {
             finalScore();
-            break;
-        }
-        playRound(getHumanChoice(), getComputerChoice());
+        }        
     }    
 }
 
