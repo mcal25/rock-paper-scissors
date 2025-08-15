@@ -1,6 +1,5 @@
-
-
 function getComputerChoice() {
+
     let choice = Math.random();
     if (choice < 0.333) {
         return 'rock';
@@ -14,8 +13,6 @@ function getComputerChoice() {
 function getHumanChoice() {
     return prompt(`Best of 5. rock, paper, or scissors?`).toLowerCase();
 }
-
-
 
 function playGame() {
 
@@ -48,6 +45,7 @@ function playGame() {
     }
 
     function finalScore() {
+        
         if (humanScore > computerScore) {
             console.log(`You win this time, human. You're not quite obsolete yet.`)
         } else if (computerScore > humanScore) {
